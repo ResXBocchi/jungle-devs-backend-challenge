@@ -11,10 +11,6 @@ from django.db import models
 # Helpers
 ###
 class Base(models.Model):
-    '''
-        Extend this model if you wish to have automatically updated
-        created_at and updated_at fields.
-    '''
 
     class Meta:
         abstract = True
