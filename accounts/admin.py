@@ -26,3 +26,5 @@ class UserAdmin(BaseUserAdmin):
 class ChangeEmailRequestAdmin(admin.ModelAdmin):
     list_display = ('email',)
     readonly_fields = ('uuid',)
+
+

@@ -8,6 +8,8 @@ class Topic(Base):
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
+        default=0
+
     )
     description = models.TextField(max_length=500)
     urlname = models.SlugField(max_length=60)
