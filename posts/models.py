@@ -13,6 +13,5 @@ class Post(Base):
     )
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
-        default=0
+        on_delete=models.CASCADE
     )
