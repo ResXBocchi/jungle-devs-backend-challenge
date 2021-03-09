@@ -12,4 +12,4 @@ class Topic(Base):
 
     )
     description = models.TextField(max_length=500)
-    urlname = models.SlugField(max_length=60)
+    urlname = models.SlugField(max_length=60, unique=True)
