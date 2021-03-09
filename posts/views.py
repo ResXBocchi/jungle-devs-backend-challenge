@@ -1,7 +1,6 @@
 from posts.models import Post
 from posts.serializers import PostSerializer
-from rest_framework import generics
-from rest_framework import permissions
+from rest_framework import generics, permissions, viewsets
 from helpers.permissions import IsOwnerOrReadOnly
 
 

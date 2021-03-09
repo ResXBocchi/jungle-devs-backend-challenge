@@ -1,7 +1,6 @@
 from comments.models import Comment
 from comments.serializers import CommentSerializer
-from rest_framework import generics
-from rest_framework import permissions
+from rest_framework import generics, permissions, viewsets
 from helpers.permissions import IsOwnerOrReadOnly
 
 

@@ -1,7 +1,6 @@
 from topics.models import Topic
 from topics.serializers import TopicSerializer
-from rest_framework import generics
-from rest_framework import permissions
+from rest_framework import generics, permissions, viewsets
 from helpers.permissions import IsOwnerOrReadOnly
 
 
@@ -11,3 +10,4 @@ class TopicViewSet(viewsets.ModelViewSet):
     queryset = Topic.objects.all()
     serializer_class = TopicSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+    lookup_field = 'urlname'
