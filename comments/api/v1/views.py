@@ -1,4 +1,5 @@
 from comments.models import Comment
+from posts.models import Post
 from comments.api.v1.serializers import CommentSerializer
 from rest_framework import generics, permissions, viewsets
 from helpers.permissions import IsOwnerOrReadOnly
@@ -13,5 +14,5 @@ class CommentViewSet(viewsets.ModelViewSet):
     permission_classes = [IsOwnerOrReadOnly]
 
     def perform_create(self, serializer):
-        serializer.save(author=self.request.user)
+        serializer.save(author=self.request.user, post = Post.objects.get())
 

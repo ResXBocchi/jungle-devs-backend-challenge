@@ -1,6 +1,8 @@
 from posts.models import Post
+from topics.models import Topic
 from posts.api.v1.serializers import PostSerializer
-from rest_framework import generics, permissions, viewsets
+from topics.api.v1.serializers import TopicSerializer
+from rest_framework import generics, permissions, viewsets,serializers
 from helpers.permissions import IsOwnerOrReadOnly
 
 
@@ -13,4 +15,4 @@ class PostViewSet(viewsets.ModelViewSet):
     permission_classes = [IsOwnerOrReadOnly]
 
     def perform_create(self, serializer):
-        serializer.save(author=self.request.user)
+        serializer.save(author=self.request.user,  topic = Topic.objects.get())
